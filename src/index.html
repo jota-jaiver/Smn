@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Comisaría de los Pequeños Muchachos</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<noscript><p class="aviso">Esta comisaría necesita JavaScript. Actívalo y recarga la página.</p></noscript>
+
+<header>
+  <p class="marca">Comisaría de los Pequeños Muchachos</p>
+  <p id="progreso" aria-live="polite"></p>
+</header>
+
+<main>
+  <!-- PORTADA -->
+  <section class="vista" id="inicio">
+    <div class="cinta" aria-hidden="true">Escena del crimen · No pasar · Escena del crimen · No pasar</div>
+    <h1>Operación Taza Fría</h1>
+    <!-- IMAGEN: img/muchacho.jpg (la víctima, tumbada junto a la taza) -->
+    <img class="foto" src="img/muchacho.jpg" alt="El líder de los pequeños muchachos, tendido junto a una taza de té" onerror="this.remove()">
+    <p>El líder de los pequeños muchachos ha aparecido sin vida junto a una taza de té. El libro de cuentas está abierto y falta una página. Los demás han desaparecido.</p>
+    <p>Escanea el código de cada ficha para abrir su expediente. Cada sobre trae un código para el archivo de pruebas.</p>
+    <nav class="lista" aria-label="Expedientes">
+      <a href="#pumpy">Expediente: Pumpy</a>
+      <a href="#vlad">Expediente: Vlad Piticul</a>
+      <a href="#marcapaginas">Expediente: Don Marcapáginas</a>
+      <a href="#tizon">Expediente: Profesor Tizón</a>
+    </nav>
+  </section>
+
+  <!-- EXPEDIENTES -->
+  <section class="vista" id="pumpy">
+    <h2>Pumpy</h2><p class="sello">Sospechoso</p>
+    <!-- IMAGEN: img/pumpy.png -->
+    <img class="foto" src="img/pumpy.png" alt="Pumpy, el culturista" onerror="this.remove()">
+    <dl>
+      <dt>Oficio</dt><dd>Culturista. Entrena a todas horas.</dd>
+      <dt>Declaración</dt><dd>«Yo estaba en el gimnasio. Pregunten a quien quieran.»</dd>
+      <dt>Coartada</dt><dd>Dice haber estado entrenando toda la noche.</dd>
+    </dl>
+  </section>
+
+  <section class="vista" id="vlad">
+    <h2>Vlad Piticul</h2><p class="sello">Sospechoso</p>
+    <!-- IMAGEN: img/vlad.png -->
+    <img class="foto" src="img/vlad.png" alt="Vlad Piticul, con capa" onerror="this.remove()">
+    <dl>
+      <dt>Oficio</dt><dd>Caballero elegante, siempre con capa. Natural de los Cárpatos.</dd>
+      <dt>Declaración</dt><dd>«Duermo de día y no recuerdo nada. Solo sé que la quería a ella.»</dd>
+      <dt>Coartada</dt><dd>Ninguna. Nadie lo vio en toda la noche.</dd>
+    </dl>
+  </section>
+
+  <section class="vista" id="marcapaginas">
+    <h2>Don Marcapáginas</h2><p class="sello">Sospechoso</p>
+    <!-- IMAGEN: img/marcapaginas.png -->
+    <img class="foto" src="img/marcapaginas.png" alt="Don Marcapáginas, el bibliotecario" onerror="this.remove()">
+    <dl>
+      <dt>Oficio</dt><dd>Bibliotecario de los pequeños muchachos.</dd>
+      <dt>Declaración</dt><dd>«Pasé la noche catalogando. Ni siquiera sabía lo del testamento.»</dd>
+      <dt>Coartada</dt><dd>Varios testigos lo vieron en la biblioteca.</dd>
+    </dl>
+  </section>
+
+  <section class="vista" id="tizon">
+    <h2>Profesor Tizón</h2><p class="sello">Sospechoso</p>
+    <!-- IMAGEN: img/tizon.png -->
+    <img class="foto" src="img/tizon.png" alt="El Profesor Tizón con su puntero" onerror="this.remove()">
+    <dl>
+      <dt>Oficio</dt><dd>Maestro de los pequeños muchachos. Siempre con su puntero.</dd>
+      <dt>Declaración</dt><dd>«Estaba dando clase. Tengo un dibujo con la hora.»</dd>
+      <dt>Coartada</dt><dd>Un dibujo firmado, aunque la fecha no cuadra.</dd>
+    </dl>
+  </section>
+
+  <!-- ARCHIVO -->
+  <section class="vista" id="archivo">
+    <h2>Archivo de pruebas</h2>
+    <p>Introduce el código del sobre para abrir la prueba.</p>
+    <form id="form-codigo" autocomplete="off">
+      <label for="codigo">Código del sobre</label>
+      <input id="codigo" type="text" autocapitalize="characters" required>
+      <button type="submit">Abrir prueba</button>
+    </form>
+    <p id="msg-codigo" class="msg" role="status"></p>
+    <nav class="lista" id="abiertas" aria-label="Pruebas abiertas"></nav>
+  </section>
+
+  <!-- PRUEBAS (se muestran solo si están desbloqueadas) -->
+  <section class="vista" id="pista1">
+    <h2>Prueba 1: informe del forense</h2><p class="sello">Archivo abierto</p>
+    <!-- IMAGEN: img/prueba1.jpg (tazas, marcadores de prueba y lupa) -->
+    <img class="foto" src="img/prueba1.png" alt="Una taza volcada con residuo blanquecino junto a una segunda taza intacta" onerror="this.remove()">
+    <p class="maquina">Hora de la muerte: 3:15. Causa: sustancia disuelta en la taza de té. Se encontraron dos tazas sobre la mesa. Conclusión: la víctima recibió una visita.</p>
+  </section>
+  <section class="vista" id="pista2">
+    <h2>Prueba 2: coartadas</h2><p class="sello">Archivo abierto</p>
+    <!-- IMAGEN: img/prueba2.jpg (objetos de las coartadas de los cuatro sospechosos) -->
+    <img class="foto" src="img/prueba2.png" alt="Objetos de los sospechosos: toalla de gimnasio, carta de amor, fichero de biblioteca y dibujo de un reloj" onerror="this.remove()">
+    <p class="maquina">Pumpy y Don Marcapáginas tienen testigos. Vlad no tiene coartada, pero entre sus cosas hay una carta de amor sin enviar. Tizón dice haber dado clase, pero su dibujo con la hora lleva una fecha equivocada.</p>
+  </section>
+  <section class="vista" id="pista3">
+    <h2>Prueba 3: libro de cuentas</h2><p class="sello">Archivo abierto</p>
+    <!-- IMAGEN (opcional): img/libro-cuentas.jpg -->
+    <img class="foto" src="img/libro-cuentas.png" alt="Libro de cuentas con páginas arrancadas" onerror="this.remove()">
+    <p class="maquina">Faltan las páginas de las últimas semanas, justo las que incriminan a quien se llevaba monedas de la hucha. En el margen alguien escribió: «Urmărește banii».</p>
+  </section>
+  <section class="vista" id="pista4">
+    <h2>Prueba 4: las tizas</h2><p class="sello">Archivo abierto</p>
+    <!-- IMAGEN: img/prueba4.jpg (tiza de pizarra, magnesio y borde de la taza) -->
+    <img class="foto" src="img/prueba4.png" alt="Tiza de pizarra y magnesio de gimnasio junto al borde de una taza con polvo blanco" onerror="this.remove()">
+    <p class="maquina">Hay dos tipos de tiza: la blanca de pizarra y la de magnesio de gimnasio. Pumpy tiene magnesio en las manos. Pero el borde de la taza está manchado de tiza de pizarra.</p>
+  </section>
+
+  <!-- ACUSACIÓN -->
+  <section class="vista" id="acusacion">
+    <h2>Acusación final</h2>
+    <p>Elige al culpable y su móvil. Solo hay una acusación correcta.</p>
+    <form id="form-acusacion">
+      <label for="culpable">Culpable</label>
+      <select id="culpable" required>
+        <option value="">Elige un sospechoso</option>
+        <option value="pumpy">Pumpy</option>
+        <option value="vlad">Vlad Piticul</option>
+        <option value="marcapaginas">Don Marcapáginas</option>
+        <option value="tizon">Profesor Tizón</option>
+      </select>
+      <label for="movil">Móvil</label>
+      <select id="movil" required>
+        <option value="">Elige un móvil</option>
+        <option value="deudas">Deudas</option>
+        <option value="celos">Celos</option>
+        <option value="herencia">Herencia</option>
+        <option value="chantaje">Chantaje</option>
+      </select>
+      <button type="submit">Presentar acusación</button>
+    </form>
+    <p id="msg-acusacion" class="msg" role="status"></p>
+    <div id="exito" hidden>
+      <p class="sello grande">Caso resuelto</p>
+      <p>Los pequeños muchachos te lo agradecen. Abre la <strong id="bolsa"></strong>.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="barra" aria-label="Navegación principal">
+  <a href="#inicio">Portada</a>
+  <a href="#archivo">Archivo</a>
+  <a href="#acusacion">Acusar</a>
+  <button type="button" id="reiniciar">Reiniciar</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
